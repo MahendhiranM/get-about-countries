@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: bor;
+}
+
+:root {
+    --light-white: #edffec;
+    --light-pink: #f6dfeb;
+    --light-blue: #caf7e3;
+    --pink: #e4bad4;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+}
+
+p {
+    color: #1d1d1d;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    width: 100%;
+    height: auto;
+    padding: 0.4rem 0;
+}
+
+.row {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    color: var(--pink);
+    background-color: var(--light-white);
+}
+
+.search {
+    background-color: var(--light-white);
+}
+
+.search__form {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.search__form input,
+.search__form button {
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 0.4rem 0.8rem;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1rem;
+}
+
+.search__form input {
+    border-radius: 6px;
+}
+
+.search__form button {
+    border-radius: 0 6px 6px 0;
+}
+
+.countries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 2rem;
+}
+
+.country {
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    border-radius: 6px;
+    margin: 1rem 0.4rem;
+    overflow: hidden;
+}
+
+.country img {
+    max-width: 100%;
+}
+
+.bi {
+    padding-right: 0.8rem;
+}
+
+.country__name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.6rem 0.2rem 0.4rem 1rem;
+}
+
+.country__population,
+.country__language,
+.country__currencies {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.6rem 0rem 0.4rem 1rem;
+}
+
+.country__currencies {
+    padding-bottom: 1rem;
+}
+
+.footer__section {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--light-white);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer__section a {
+    color: var(--pink);
+}
+
+.footer__section a:hover {
+    color: blue;
+    text-decoration: underline;
+}
