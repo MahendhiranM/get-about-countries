@@ -1,14 +1,5 @@
-function getCountryData(name) {
-    const request = new XMLHttpRequest();
-    request.open(
-        "GET",
-        `https://restcountries.eu/rest/v2/name/${name}?fullText=true`
-    );
-    request.send();
-    request.addEventListener("load", function () {
-        const [data] = JSON.parse(this.responseText);
-        console.log(data);
-        const html = `<div class="country">
+function getCountryData(data) {
+    const html = `<div class="country">
         <img
             class="country__flag"
             src="${data.flag}"
@@ -27,9 +18,14 @@ function getCountryData(name) {
             <i class="bi bi-cash"></i>${data.currencies[0].name}
         </p>
     </div>`;
-        countries.insertAdjacentHTML("afterbegin", html);
-    });
+    countries.insertAdjacentHTML("afterbegin", html);
 }
+
+const renderCountry = function (countryName) {
+    fetch(`https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`)
+        .then((response) => response.json())
+        .then((data) => getCountryData(data[0]));
+};
 
 const searchValue = document.querySelector(".search__country");
 const smtBtn = document.querySelector(".smt-btn");
@@ -37,6 +33,6 @@ const countries = document.querySelector(".countries");
 
 smtBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    getCountryData(searchValue.value);
+    renderCountry(searchValue.value);
     searchValue.value = "";
 });
