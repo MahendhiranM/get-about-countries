@@ -18,13 +18,20 @@ function getCountryData(data) {
             <i class="bi bi-cash"></i>${data.currencies[0].name}
         </p>
     </div>`;
-    countries.insertAdjacentHTML("afterbegin", html);
+    countries.innerHTML = html;
 }
 
 const renderCountry = function (countryName) {
     fetch(`https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`)
         .then((response) => response.json())
-        .then((data) => getCountryData(data[0]));
+        .then((data) => getCountryData(data[0]))
+        .catch((err) => {
+            document.querySelector(".countries").textContent =
+                "Country not found!";
+        })
+        .finally(() => {
+            searchValue.value = "";
+        });
 };
 
 const searchValue = document.querySelector(".search__country");
@@ -34,5 +41,4 @@ const countries = document.querySelector(".countries");
 smtBtn.addEventListener("click", function (e) {
     e.preventDefault();
     renderCountry(searchValue.value);
-    searchValue.value = "";
 });
