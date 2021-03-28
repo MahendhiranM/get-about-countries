@@ -5,15 +5,16 @@
 }
 
 :root {
-    --light-white: #edffec;
-    --light-pink: #f6dfeb;
-    --light-blue: #caf7e3;
-    --pink: #e4bad4;
+    --color1: #252525;
+    --color2: #6930c3;
+    --color3: #e4fbff;
+    --color4: #fdfdfd;
 }
 
 body {
     font-family: "Quicksand", sans-serif;
     font-size: 20px;
+    background-color: var(--color4);
 }
 
 p {
@@ -37,12 +38,12 @@ section {
 
 .title {
     text-align: center;
-    color: var(--pink);
-    background-color: var(--light-white);
+    color: var(--color3);
+    background-color: var(--color1);
 }
 
 .search {
-    background-color: var(--light-white);
+    background-color: var(--color2);
 }
 
 .search__form {
@@ -59,6 +60,7 @@ section {
     padding: 0.4rem 0.8rem;
     font-family: "Quicksand", sans-serif;
     font-size: 1rem;
+    background-color: white;
 }
 
 .search__form input {
@@ -114,18 +116,19 @@ section {
 .footer__section {
     font-size: 1rem;
     font-weight: 500;
-    background-color: var(--light-white);
+    background-color: var(--color1);
+    color: var(--color3);
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
 }
 
-.footer__section a {
-    color: var(--pink);
+.footer__section a,
+.footer__section p {
+    color: var(--color3);
 }
 
 .footer__section a:hover {
-    color: blue;
     text-decoration: underline;
 }
