@@ -25,13 +25,12 @@ const renderCountry = function (countryName) {
     fetch(`https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`)
         .then((response) => response.json())
         .then((data) => getCountryData(data[0]))
-        .catch((err) => {
-            document.querySelector(".countries").textContent =
-                "Country not found!";
-        })
-        .finally(() => {
-            searchValue.value = "";
-        });
+        .catch(
+            (err) =>
+                (document.querySelector(".countries").textContent =
+                    "Country not found!")
+        )
+        .finally(() => (searchValue.value = ""));
 };
 
 const searchValue = document.querySelector(".search__country");
