@@ -41,3 +41,5 @@ smtBtn.addEventListener("click", function (e) {
     e.preventDefault();
     renderCountry(searchValue.value);
 });
+
+renderCountry("india");
