@@ -22,7 +22,7 @@ function getCountryData(data) {
 }
 
 const renderCountry = function (countryName) {
-    fetch(`https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`)
+    fetch(`https://restcountries.eu/rest/v3.1/name/${countryName}?fullText=true`)
         .then((response) => response.json())
         .then((data) => getCountryData(data[0]))
         .catch(
